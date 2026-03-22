@@ -1,0 +1,37 @@
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local environments
+.venv/
+.conda/
+env/
+
+# OS / editor noise
+.DS_Store
+
+# Training outputs
+outputs/
+eval/results.jsonl
+
+# Downloaded assets
+models/
+external_datasets/
+
+# Generated datasets
+/dataset/external_normalized/
+/dataset/book_runs/*
+!/dataset/book_runs/.gitkeep
+/dataset/final_runs/*
+!/dataset/final_runs/.gitkeep
+/dataset/*.jsonl
+
+# Local source texts: keep only the tiny example input in repo
+/dataset/raw_books/*
+!/dataset/raw_books/.gitkeep
+!/dataset/raw_books/example_book.txt
+
+# Runtime caches
+/scripts/__pycache__/
+/unsloth_compiled_cache/

@@ -1,0 +1,26 @@
+{
+  "continue_scene": {
+    "temperature": 0.9,
+    "top_p": 0.92,
+    "repetition_penalty": 1.08,
+    "max_new_tokens": 700
+  },
+  "rewrite": {
+    "temperature": 0.75,
+    "top_p": 0.9,
+    "repetition_penalty": 1.05,
+    "max_new_tokens": 600
+  },
+  "outline_to_prose": {
+    "temperature": 0.95,
+    "top_p": 0.95,
+    "repetition_penalty": 1.06,
+    "max_new_tokens": 900
+  },
+  "analysis": {
+    "temperature": 0.4,
+    "top_p": 0.85,
+    "repetition_penalty": 1.02,
+    "max_new_tokens": 300
+  }
+}
