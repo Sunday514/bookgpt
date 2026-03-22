@@ -1,5 +1,12 @@
 from __future__ import annotations
 
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 import argparse
 import gzip
 import json
@@ -7,7 +14,7 @@ import random
 from pathlib import Path
 from typing import Any
 
-from common import write_jsonl
+from bookgpt.common import write_jsonl
 
 DEFAULT_OPENHERMES_PATH = Path('external_datasets/OpenHermes-2.5-zh/translation_filtered.jsonl')
 DEFAULT_OASST1_PATH = Path('external_datasets/oasst1/data/train-00000-of-00001-b42a775f407cee45.parquet')

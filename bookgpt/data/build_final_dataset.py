@@ -10,7 +10,7 @@ from pathlib import Path
 from statistics import mean, median
 from typing import Any
 
-from common import annotate_token_counts, load_tokenizer, read_jsonl, write_jsonl
+from bookgpt.common import annotate_token_counts, load_tokenizer, read_jsonl, write_jsonl
 
 DEFAULT_BOOK_DIR = Path('dataset/book_run')
 DEFAULT_EXTERNAL_DIR = Path('dataset/external_normalized')

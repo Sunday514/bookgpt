@@ -1,5 +1,12 @@
 from __future__ import annotations
 
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 import argparse
 import json
 from collections import Counter
@@ -7,7 +14,7 @@ from pathlib import Path
 from statistics import mean, median
 from typing import Any
 
-from common import count_text_tokens, load_tokenizer, read_jsonl
+from bookgpt.common import count_text_tokens, load_tokenizer, read_jsonl
 
 
 def count_chars(messages: list[dict[str, str]]) -> int:

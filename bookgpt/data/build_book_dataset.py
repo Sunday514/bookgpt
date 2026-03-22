@@ -5,8 +5,8 @@ import json
 from collections import Counter
 from pathlib import Path
 
-from common import write_jsonl
-from derive_writing_tasks import (
+from bookgpt.common import write_jsonl
+from bookgpt.data.derive_writing_tasks import (
     chunk_paragraphs,
     chunk_text_fallback,
     derive_records,

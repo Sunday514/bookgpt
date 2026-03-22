@@ -7,7 +7,7 @@ import re
 from pathlib import Path
 from typing import Iterable
 
-from common import write_jsonl
+from bookgpt.common import write_jsonl
 
 CONTINUE_SYSTEM_PROMPTS = [
     '你是中文小说创作助手。基于给定上下文续写，保持情绪和人物状态连贯。',

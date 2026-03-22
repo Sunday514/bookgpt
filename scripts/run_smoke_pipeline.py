@@ -39,7 +39,8 @@ def main() -> None:
     python = sys.executable
     run([
         python,
-        'scripts/build_book_dataset.py',
+        '-m',
+        'bookgpt.data.build_book_dataset',
         '--input', args.book_input,
         '--output-dir', args.book_dir,
         '--source-name', args.source_name,
@@ -52,7 +53,8 @@ def main() -> None:
     ])
     run([
         python,
-        'scripts/build_final_dataset.py',
+        '-m',
+        'bookgpt.data.build_final_dataset',
         '--book-dir', args.book_dir,
         '--external-dir', args.external_dir,
         '--output-dir', args.final_dir,

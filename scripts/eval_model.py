@@ -1,10 +1,17 @@
 from __future__ import annotations
 
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 import argparse
 
 import torch
 
-from common import load_causal_lm, read_jsonl, write_jsonl
+from bookgpt.common import load_causal_lm, read_jsonl, write_jsonl
 
 
 def build_prompt(tokenizer, messages: list[dict[str, str]]) -> str:

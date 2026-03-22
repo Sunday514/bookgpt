@@ -1,12 +1,19 @@
 from __future__ import annotations
 
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 import argparse
 import json
 from pathlib import Path
 
 import torch
 
-from common import is_peft_adapter_dir, load_causal_lm, load_hf_peft_4bit_model
+from bookgpt.common import is_peft_adapter_dir, load_causal_lm, load_hf_peft_4bit_model
 
 
 def load_presets(path: str | Path) -> dict:
