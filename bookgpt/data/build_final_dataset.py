@@ -207,7 +207,7 @@ def main() -> None:
     parser.add_argument('--target-total', type=int, default=10000, help='Target number of training records in the final train split.')
     parser.add_argument(
         '--ratios',
-        default='0.45,0.20,0.25,0.10',
+        default='0.20,0.35,0.15,0.30',
         help='Comma-separated train ratios for book,openhermes,coig_writer,oasst1_zh',
     )
     parser.add_argument('--allow-openhermes-code', action='store_true', help='Keep code-heavy OpenHermes samples.')
@@ -302,10 +302,10 @@ def main() -> None:
     train_targets = compute_targets(args.target_total, effective_ratios)
 
     train_records = []
-    train_records += sample_records(book_train, train_targets['book'], args.seed + 10, allow_repeat=True)
+    train_records += sample_records(book_train, train_targets['book'], args.seed + 10, allow_repeat=False)
     train_records += sample_records(oh_train, train_targets['openhermes'], args.seed + 11, allow_repeat=False)
-    train_records += sample_records(co_train, train_targets['coig_writer'], args.seed + 12, allow_repeat=True)
-    train_records += sample_records(oa_train, train_targets['oasst1_zh'], args.seed + 13, allow_repeat=True)
+    train_records += sample_records(co_train, train_targets['coig_writer'], args.seed + 12, allow_repeat=False)
+    train_records += sample_records(oa_train, train_targets['oasst1_zh'], args.seed + 13, allow_repeat=False)
 
     dev_targets = {
         'book': min(len(book_dev), allocate_eval_target(train_targets['book'])),

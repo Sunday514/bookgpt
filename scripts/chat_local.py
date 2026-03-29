@@ -42,11 +42,7 @@ def main() -> None:
     preset = presets[args.preset]
     model, tokenizer = load_chat_model(args.model_path)
 
-    system_prompt = (
-        # '你是中文写作助手，负责完成用户要求的续写、改写、扩写、压缩、分析或对白生成任务。'
-        # '输出应保持统一、自然、克制、连贯，重视语气、节奏和文本质感；'
-        # '没有明确要求时，不主动切换到明显不同的写法，并避免机械重复输入文本中的句子。'
-    )
+    system_prompt = '请直接、自然地回答用户问题；如果用户要求创作或改写，再按要求处理。'
     history = [{'role': 'system', 'content': system_prompt}]
     print('Enter `exit` to quit.')
     while True:

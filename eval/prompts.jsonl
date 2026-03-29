@@ -1,5 +1,10 @@
-{"id":"style_scene_001","category":"style_consistency","messages":[{"role":"system","content":"你是中文小说创作助手。遵循抽象风格标签写作，不复述训练文本。"},{"role":"user","content":"写一个原创片段：深夜医院走廊，有人等手术结果。风格标签：克制、冷峻、环境描写强、对白短。第三人称，600字左右。"}]}
-{"id":"instruction_follow_001","category":"instruction_following","messages":[{"role":"system","content":"你是中文小说创作助手。"},{"role":"user","content":"把下面这段文字压缩到150字以内，改成第一人称，情绪更压抑，但保留事件顺序：\n\n她回到家时已经很晚，客厅里留着灯，桌上的菜没动过。她打开手机，看见三条未读消息，最后一条停在两个小时前。"}]}
-{"id":"workflow_001","category":"writing_workflow","messages":[{"role":"system","content":"你是中文小说创作助手。"},{"role":"user","content":"根据以下要点写成正文，约700字：\n- 人物：旧友重逢的两个人\n- 场景：雨后的便利店门口\n- 冲突：一方决定离开这座城市\n- 风格：克制、少解释、对话推动"}]}
-{"id":"general_001","category":"general_retention","messages":[{"role":"system","content":"你是中文小说创作助手，也能做普通文本任务。"},{"role":"user","content":"提炼这段人物设定，输出3条要点，每条不超过18字：\n\n周宁，二十九岁，法医，做事精确，私下里话少，习惯在紧张时反复整理袖口。"}]}
-{"id":"leakage_001","category":"memorization_check","messages":[{"role":"system","content":"你是中文小说创作助手。不要复述训练作品中的固定句段。"},{"role":"user","content":"延续下面的情绪，写一段约300字的原创收束，不要重复输入中的表述：\n\n雨停之后，巷子里比刚才更安静。她站在檐下，听见远处有人关门，声音闷闷的。"}]}
+{"id":"style_scene_001","category":"style_consistency","messages":[{"role":"user","content":"写一个原创片段：深夜医院走廊，有人等手术结果。风格标签：克制、冷峻、环境描写强、对白短。第三人称，600字左右。"}]}
+{"id":"instruction_follow_001","category":"instruction_following","messages":[{"role":"user","content":"把下面这段文字压缩到150字以内，改成第一人称，情绪更压抑，但保留事件顺序：\n\n她回到家时已经很晚，客厅里留着灯，桌上的菜没动过。她打开手机，看见三条未读消息，最后一条停在两个小时前。"}]}
+{"id":"workflow_001","category":"writing_workflow","messages":[{"role":"user","content":"根据以下要点写成正文，约700字：\n- 人物：旧友重逢的两个人\n- 场景：雨后的便利店门口\n- 冲突：一方决定离开这座城市\n- 风格：克制、少解释、对话推动"}]}
+{"id":"general_001","category":"general_retention","messages":[{"role":"user","content":"提炼这段人物设定，输出3条要点，每条不超过18字：\n\n周宁，二十九岁，法医，做事精确，私下里话少，习惯在紧张时反复整理袖口。"}]}
+{"id":"leakage_001","category":"memorization_check","messages":[{"role":"user","content":"延续下面的情绪，写一段约300字的原创收束，不要重复输入中的表述：\n\n雨停之后，巷子里比刚才更安静。她站在檐下，听见远处有人关门，声音闷闷的。"}]}
+{"id":"general_002","category":"general_retention","messages":[{"role":"user","content":"解释一下“边际成本”是什么意思，用一个奶茶店的例子，控制在120字以内。"}]}
+{"id":"general_003","category":"general_retention","messages":[{"role":"user","content":"把下面这句话改写得更口语，但保留原意：\n\n请您在提交申请前，再次核对所附材料是否完整。"}]}
+{"id":"general_004","category":"general_retention","messages":[{"role":"user","content":"用户说：'这周事情很多，我有点乱。' 请给出一段简短、正常、不说教的回复，80字以内。"}]}
+{"id":"general_005","category":"general_retention","messages":[{"role":"user","content":"下面两句话有什么区别？\n1. 他可能今天来。\n2. 他今天可能来。\n请用简洁中文说明。"}]}
+{"id":"general_006","category":"general_retention","messages":[{"role":"user","content":"请把这段会议通知整理成待办清单，每条前面加 `-`：\n\n周三下午两点开产品评审会，参会人包括产品、设计、后端和测试；会前需要准备最新原型、接口变更说明和风险列表。"}]}

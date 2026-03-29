@@ -9,12 +9,6 @@ from typing import Iterable
 
 from bookgpt.common import write_jsonl
 
-CONTINUE_SYSTEM_PROMPTS = [
-    '你是中文小说创作助手。基于给定上下文续写，保持情绪和人物状态连贯。',
-    '你是中文小说创作助手。请根据上文继续写下去，保持叙事节奏、人物状态与场景氛围一致。',
-    '你是中文小说创作助手。延续给定片段继续创作，保持语气、视角和文风稳定。',
-]
-
 CONTINUE_USER_PROMPTS = [
     '延续下面的情绪和叙事节奏续写，不要重复输入中的表述。\n\n{prompt_text}',
     '请接着下面的片段往后写，保持人物、场景和语气连贯，避免直接复述前文。\n\n{prompt_text}',
@@ -334,7 +328,6 @@ def build_continue_sample(
     *,
     pivot_ratio: float = 0.5,
     template_index: int | None = None,
-    system_index: int | None = None,
     rng: random.Random | None = None,
 ) -> dict[str, object] | None:
     if len(chunk) < 240:
@@ -349,16 +342,12 @@ def build_continue_sample(
     if rng is None:
         rng = random
 
-    if system_index is None:
-        system_index = rng.randrange(len(CONTINUE_SYSTEM_PROMPTS))
     if template_index is None:
         template_index = rng.randrange(len(CONTINUE_USER_PROMPTS))
 
-    system_prompt = CONTINUE_SYSTEM_PROMPTS[system_index]
     user_prompt = CONTINUE_USER_PROMPTS[template_index].format(prompt_text=prompt_text)
     return {
         'messages': [
-            {'role': 'system', 'content': system_prompt},
             {'role': 'user', 'content': user_prompt},
             {'role': 'assistant', 'content': target_text},
         ],
@@ -368,7 +357,7 @@ def build_continue_sample(
             'style_tags': infer_style_tags(chunk),
             'split': split,
             'copyright_status': 'licensed',
-            'prompt_template': f'continue_s{system_index}_u{template_index}',
+            'prompt_template': f'continue_u{template_index}',
             'pivot_ratio': round(pivot_ratio, 4),
             'pivot_boundary': boundary_kind,
             'safety': {'memorization_holdout': split == 'test'},
@@ -391,7 +380,6 @@ def generate_continue_variants(
     records: list[dict[str, object]] = []
     for variant_index in range(variant_count):
         pivot_ratio = pivot_ratios[variant_index % len(pivot_ratios)]
-        system_index = variant_index % len(CONTINUE_SYSTEM_PROMPTS)
         template_index = rng.randrange(len(CONTINUE_USER_PROMPTS))
         record = build_continue_sample(
             chunk,
@@ -399,7 +387,6 @@ def generate_continue_variants(
             split,
             pivot_ratio=pivot_ratio,
             template_index=template_index,
-            system_index=system_index,
             rng=rng,
         )
         if record is None:
